@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<h1>
+			Test - 01
+		</h1>
+		<h2>
+			Basic HTML injection using Inline Script.
+		</h2>
+		Hi 
+		<script>
+			var pos = document.URL.indexOf("name=") + 5;
+			var name = '<b>' + document.URL.substring(pos, document.URL.length) + '</b>'
+			document.write(name);
+		</script>
+		<div>
+			It's magic! :D
+		</div>
+	</body>
+</html>
