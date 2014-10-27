@@ -1,0 +1,29 @@
+<html>
+	<body>
+	
+		<h1>
+			Test - 03
+		</h1>
+		<h2>
+			Basic HTML injection using Inline Script.
+		</h2>
+		Hi 
+		<div id="magic">
+			It's magic! :D
+		</div>
+		<script>
+            loadObj();
+            function loadObj()
+			{
+				var pos = document.URL.indexOf("name=") + 5;
+				var name = document.URL.substring(pos, document.URL.length)
+				var magicDiv = document.getElementById("magic");
+				console.log(name);
+				magicDiv.innerHTML = name;
+			}
+		</script>
+	</body>
+</html>
+<!--
+1. name=abc#<img src="random.gif" onerror=alert(1)>
+-->

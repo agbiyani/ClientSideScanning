@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script>
+			var pos = document.URL.indexOf("funcName=") + 9;
+			var title = document.URL.substring(pos, document.URL.length);
+		</script>
+	</head>
+	<body>
+
+		<div id="pid">new Function example</div>
+		<img title= <% title %>>
+
+	</body>
+</html>
+
+<!--
+1 - ?funcName=alert(1);
+2 - ?funcName=1;alert(1);
+-->

@@ -1,0 +1,18 @@
+<html>
+	<body>
+
+		<p>setTimeout example</p>
+
+		<script>
+			var pos = document.URL.indexOf("funcName=") + 9;
+			var funcName = document.URL.substring(pos, document.URL.length);
+			var myVar = setTimeout(funcName, 5000);
+		</script>
+
+	</body>
+</html>
+
+<!--
+1 - ?funcName=alert(1);
+2 - ?funcName=1;alert(1);
+-->

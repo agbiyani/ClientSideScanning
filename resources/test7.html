@@ -1,0 +1,31 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="myDiv" style="background:yellow;">
+			Some content.
+		</div>
+		Press the button below to view the car!
+		<button id= "btnID" name="subject" type="submit" value="fav_HTML" onclick=myLog("buttonClicked")>HTML</button>
+		<script id="calc">
+			function myLog(message)
+			{
+				console.log("Aabha");
+			}
+		</script>
+		<script id="myScriptTag" type="text/javascript">
+			var pos = document.URL.indexOf("speed=") + 6;
+			var speed = document.URL.substring(pos, document.URL.length);
+			var scriptTag = document.getElementById("calc");
+			var startPos = scriptTag.innerText.indexOf("function");
+			var endPos = scriptTag.innerText.indexOf(")") + 1;
+			var funcDecl = scriptTag.innerText.substring(startPos, endPos);
+		//	var funcDecl = scriptTag.innerText.substring(0, endPos);
+			console.log(funcDecl);
+			scriptTag.innerHTML = funcDecl + " { " + speed + " }";
+			console.log(scriptTag.id);
+			myLog("Shouldn't be logged :(")
+		</script>
+		<button id= "obedientButton" name="obedientButton" type="submit" value="obedientButton" onclick=myLog("btnClicked")>obedientButton</button>
+	</body>	
+</html>

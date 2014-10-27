@@ -1,7 +1,7 @@
 <html>
 	<body>
 		<h1>
-			Test - 01
+			Test - 03
 		</h1>
 		<h2>
 			Basic HTML injection using Inline Script.
@@ -10,11 +10,12 @@
 		<script>
 			var pos = document.URL.indexOf("name=") + 5;
 			var name = '<b>' + document.URL.substring(pos, document.URL.length) + '</b>'
-			document.write(name);
+			document.writeln(name);
 		</script>
 		<div>
 			It's magic! :D
 		</div>
 	</body>
 </html>
+
 <!-- attack vector: name=abc#<script>alert('hi')</script>

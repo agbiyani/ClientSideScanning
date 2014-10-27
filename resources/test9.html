@@ -1,0 +1,24 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+	
+		<p id="pid"><script>var data = getText();</script>data</p>
+		<div id="myDiv" style="background:blue;">
+			What a wonderful color!
+		</div>
+		<script type="text/javascript">
+			var pos = document.URL.indexOf("speed=") + 6;
+			var speed = document.URL.substring(pos, document.URL.length);
+			var pTag = document.getElementById("pid");
+			pTag.innerHTML = speed;
+		</script>
+	</body>	
+</html>
+
+<!--
+1. http://localhost/domxss/test9.html?speed=<!--aabha
+
+Works(is exploitable) on IE
+-->

@@ -1,0 +1,21 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="myDiv" style="background:blue;">
+			What a wonderful color!
+		</div>
+		Press the button below to view the car!
+		<button id= "btnID" name="subject" type="submit" value="fav_HTML" onclick=myLog("buttonClicked")>HTML</button>
+		<script id="myScriptTag" type="text/javascript">
+			var pos = document.URL.indexOf("speed=") + 6;
+			var speed = document.URL.substring(pos, document.URL.length);
+			var script_tag = document.createElement('script');
+			script_tag.type = 'text/javascript';
+		//	script_tag.text = 'alert("hello world")';
+			script_tag.text = speed;
+			document.body.appendChild(script_tag);
+		</script>
+		<button id= "obedientButton" name="obedientButton" type="submit" value="obedientButton" onclick=myLog("btnClicked")>obedientButton</button>
+	</body>	
+</html>

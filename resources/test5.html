@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function InsertHtmlTxt () 
+			{
+				console.log("In functions InsertHtmlTxt");
+				var pos = document.URL.indexOf("name=") + 5;
+				var name = document.URL.substring(pos, document.URL.length);
+				var htmlTxt = name;
+				var div = document.getElementById ("myDiv");
+
+				if (document.createRange) 
+				{     // all browsers, except IE before version 9
+					console.log("Outer if");
+					var rangeObj = document.createRange ();
+				if (rangeObj.createContextualFragment) 
+					{       // all browsers, except IE
+						console.log("Inner if");
+						var documentFragment = rangeObj.createContextualFragment (htmlTxt);
+						div.insertBefore (documentFragment, div.firstChild);
+					}
+					else 
+					{      // Internet Explorer from version 9
+						console.log("Inner else");
+						div.insertAdjacentHTML ("afterBegin", htmlTxt);
+					}
+				}
+				else 
+				{      // Internet Explorer before version 9
+					console.log("Outer else");
+					div.insertAdjacentHTML ("afterBegin", htmlTxt);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="myDiv" style="background:yellow;">
+			Some content.
+		</div>
+		<button onclick="InsertHtmlTxt ();">Insert a button at the beginning of the yellow field!</button>
+</html>
+<!--
+1. name=abc#<img src="random.gif" onerror=alert(1)>
+-->

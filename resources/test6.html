@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<div id="myDiv" style="background:yellow;">
+			Some content.
+		</div>
+		Press the button below to view the car!
+		<button id= btnID name="subject" type="submit" value="fav_HTML">HTML</button>
+		<script type="text/javascript">
+			var pos = document.URL.indexOf("carName=") + 8;
+			var carName = document.URL.substring(pos, document.URL.length);
+		    var buttonVal = "View " + carName;
+			var button = document.getElementById("btnID");
+			button.value = buttonVal;
+		</script>
+</html>

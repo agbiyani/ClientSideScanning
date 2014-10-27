@@ -9,10 +9,20 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Test3 
 {	
+	public static String [] params = {
+		"#message=",
+		"?message=",
+		"?name=",
+		"?speed=",
+		"?funcName="
+	};
 	public static String [] attackStrings = {
-		"#message=abc",
-		"#message=alert(1)",//if eval sink 
-		"?message=abc#<script>alert(1)</script>" // If document.write is the sink
+		"abc",
+		"alert(1)",//if eval sink 
+		"abc#<script>alert(1)</script>", // If document.write is the sink
+		"abc#<img src='random.gif' onerror=alert(1)",
+		"abc/*",
+		"abc<!--"
 		};
 	public static void test(String url)
 	{

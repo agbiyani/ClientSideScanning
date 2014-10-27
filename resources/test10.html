@@ -1,0 +1,23 @@
+<html>
+	<body>
+
+		<p>setInterval example</p>
+
+		<script>
+			var pos = document.URL.indexOf("funcName=") + 9;
+			var funcName = document.URL.substring(pos, document.URL.length);
+			var myVar = setInterval(funcName, 1000);
+
+			function myTimer() 
+			{
+				var d = new Date();
+				var t = d.toLocaleTimeString();
+				document.getElementById("demo").innerHTML = t;
+			}
+		</script>
+
+	</body>
+</html>
+<!--
+?funcName=alert(1);
+-->
